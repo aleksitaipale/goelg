@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/three.min.js"></script>
+	<script src="js/threeGfx.js"></script>
+	<title>_goelg</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+</head>
+<body>
+
+	<div id="goelgtext">[ goelg ]</div>
+	<div id="goelginfo">noisy, dark techno from the northern hemisphere<br></div>
+	<a id="sclink" href="http://www.soundcloud.com/goelg">soundcloud</a>
+	<div id="player"></div>
+	<div id="graphics">
+	</div>
+	<script>
+	if (!window.matchMedia("(max-width: 480px)").matches){
+		(function() {
+			var script = document.createElement("script");
+
+			script.type = "text/javascript";
+			script.async = true;
+			script.src = "js/toneden.loader.js"
+
+			var entry = document.getElementsByTagName("script")[0];
+			entry.parentNode.insertBefore(script, entry);
+		}());
+
+		ToneDenReady = window.ToneDenReady || [];
+		ToneDenReady.push(function() {
+        // Modify the dom and urls parameters to position
+        // your player and select tracks/sets/artists to play.
+        ToneDen.player.create({
+        	dom: "#player",
+        	urls: [
+        	"https://soundcloud.com/goelg"
+        	]
+        });
+    });
+	}
+	</script>
+
+</body>
+</html>
